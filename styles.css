@@ -116,6 +116,7 @@ body {
   margin: 0 auto 2rem;
   display: block;
   width: fit-content;
+  white-space: nowrap;
   position: relative;
   background: linear-gradient(135deg, #cc2e8e, #ff7ec7 70%);
   -webkit-background-clip: text;
@@ -125,9 +126,11 @@ body {
 }
 
 .tld {
-  position: absolute;
-  bottom: 0.12em;
-  right: -2.5em;
+  display: inline;
+  vertical-align: baseline;
+  position: relative;
+  top: 0.18em;
+  margin-left: 0;
   font-family: "Nunito", sans-serif;
   font-size: clamp(0.65rem, 1.8vw, 0.85rem);
   font-weight: 800;
