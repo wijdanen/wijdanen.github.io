@@ -60,6 +60,9 @@ body {
 .floats li:nth-child(6) { left: 70%; animation-delay: 1.9s; animation-duration: 14s; }
 .floats li:nth-child(7) { left: 82%; animation-delay: 1s;   animation-duration: 11s; }
 .floats li:nth-child(8) { left: 93%; animation-delay: 2.6s; animation-duration: 9s;  }
+.floats li:nth-child(9)  { left: 12%; animation-delay: 3.2s; animation-duration: 13s; font-size: 1.8rem; }
+.floats li:nth-child(10) { left: 51%; animation-delay: 5.1s; animation-duration: 11s; font-size: 1.6rem; }
+.floats li:nth-child(11) { left: 76%; animation-delay: 1.7s; animation-duration: 14s; font-size: 2rem;   }
 
 @keyframes float-up {
   0%   { transform: translateY(0) rotate(0deg);    opacity: 0; }
@@ -153,7 +156,7 @@ body {
 /* ── buttons ───────────────────────────────────── */
 .socials {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.8rem;
   animation: fade-up-in 0.7s 0.45s ease both;
 }
@@ -202,6 +205,18 @@ body {
 
 .btn--instagram:hover,
 .btn--instagram:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--pink-400), 0 10px 24px rgba(232, 53, 154, 0.18);
+}
+
+/* ── resume button ──────────────────────────────── */
+.btn--resume {
+  background: var(--white);
+  color: var(--pink-600);
+  box-shadow: inset 0 0 0 2px var(--pink-200);
+}
+
+.btn--resume:hover,
+.btn--resume:focus-visible {
   box-shadow: inset 0 0 0 2px var(--pink-400), 0 10px 24px rgba(232, 53, 154, 0.18);
 }
 

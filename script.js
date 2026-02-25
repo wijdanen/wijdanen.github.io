@@ -1,5 +1,11 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
+/* ── console easter egg ──────────────────────────────── */
+console.log(
+  "%c💋 made by Osaym.com",
+  "font-size:14px; font-family:'Nunito',sans-serif; color:#e8359a; font-weight:800; background:#fff0f8; padding:6px 12px; border-radius:999px; border:1.5px solid #ffc2e6;"
+);
+
 /* ── contact modal ────────────────────────────────────────────────────── */
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbws-t6z3mHsmEZGcLorLWW-H5s9oyg83eVttDm_PaW1NvooWLomt3ycLD5qJJQeFE6p/exec";
 
@@ -83,7 +89,7 @@ form.addEventListener("submit", async (e) => {
 
 const maxSparkles = 26;
 let sparkleCount = 0;
-const SPARKLE_EMOJIS = ["🩷", "✨", "🌸", "💕", "💗"];
+const SPARKLE_EMOJIS = ["🩷", "✨", "🌸", "💕", "💗", "🧸"];
 
 function spawnSparkle(x, y) {
   if (sparkleCount > maxSparkles) return;
@@ -108,7 +114,28 @@ window.addEventListener("pointermove", (event) => {
   spawnSparkle(event.clientX, event.clientY);
 });
 
-/* ── confetti burst ─────────────────────────────────────────────────── */
+/* ── right-click heart burst ─────────────────────────────────────────── */
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+  const emojis = ["💕", "💗", "🩷", "💖", "🌸", "✨", "🧸"];
+  const count = 14;
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement("span");
+    el.className = "confetti-piece";
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    const angle = (i / count) * 360 + Math.random() * 20;
+    const dist  = 45 + Math.random() * 80;
+    const rad   = (angle * Math.PI) / 180;
+    el.style.left = `${e.clientX}px`;
+    el.style.top  = `${e.clientY}px`;
+    el.style.setProperty("--dx", `${Math.cos(rad) * dist}px`);
+    el.style.setProperty("--dy", `${Math.sin(rad) * dist}px`);
+    el.style.setProperty("--rot", `${Math.random() * 360}deg`);
+    el.style.animationDelay = `${i * 12}ms`;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 1200 + i * 12);
+  }
+});
 const CONFETTI_EMOJIS = ["💕", "🌸", "🩷", "💗", "✨", "💖"];
 
 function burstConfetti() {
