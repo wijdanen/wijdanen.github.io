@@ -112,7 +112,8 @@ body {
 .name {
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(2.2rem, 12vw, 4.8rem);
-  line-height: 1;
+  line-height: 1.2;
+  padding-bottom: 0.05em;
   margin: 0 auto 2rem;
   display: block;
   width: fit-content;
